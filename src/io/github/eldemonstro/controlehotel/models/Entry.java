@@ -15,6 +15,10 @@ public class Entry {
     private long id;
     private Date entryDate;
     private long person_id;
+    
+    public Entry() {
+        entryDate = new Date(System.currentTimeMillis());
+    }
 
     public long getId() {
         return id;

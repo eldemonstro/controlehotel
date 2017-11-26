@@ -20,7 +20,7 @@ public class EntriesController {
         entryDao = new EntryDao();
     }
     
-    public Entry saveEntry(Person person) {
+    public Entry saveEntry(Person person) throws SQLException {
         Entry entry;
         entry = entryDao.saveEntry(person);
         return entry;
