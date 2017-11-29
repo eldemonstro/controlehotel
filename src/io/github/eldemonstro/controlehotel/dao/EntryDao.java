@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.*;
 
 /**
  *
@@ -69,5 +70,13 @@ public class EntryDao {
             
         }
         return entry;
+    }
+    
+    public List<Entry> entryHistory() throws SQLException{
+        List<Entry> entries = new ArrayList<>();
+        
+        
+        
+        return entries;
     }
 }

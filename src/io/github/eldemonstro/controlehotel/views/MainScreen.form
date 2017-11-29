@@ -26,10 +26,12 @@
           <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
           <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
           <Component id="jSeparator3" alignment="1" max="32767" attributes="0"/>
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="confirmEntryButton" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="entriesHistoryLabel" max="32767" attributes="0"/>
+                  <Component id="updateEntryHistoryButton" alignment="0" max="32767" attributes="0"/>
+                  <Component id="confirmEntryButton" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="staticNameLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -41,13 +43,6 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="cpfLabel" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="titleLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="subtitleLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="cpfSearchLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -55,6 +50,13 @@
                           <Component id="cpfSearchButton" alignment="1" pref="229" max="32767" attributes="0"/>
                           <Component id="cpfSearchTextField" max="32767" attributes="0"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="titleLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="subtitleLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -91,9 +93,13 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="confirmEntryButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="32767" attributes="0"/>
               <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="entriesHistoryLabel" min="-2" pref="105" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="updateEntryHistoryButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -162,6 +168,19 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirmEntryButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="entriesHistoryLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="EntriesHistory"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="updateEntryHistoryButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Atualizar hist&#xf3;rico de entradas"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateEntryHistoryButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
