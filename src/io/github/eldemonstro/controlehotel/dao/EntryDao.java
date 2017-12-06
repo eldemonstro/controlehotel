@@ -7,6 +7,7 @@ package io.github.eldemonstro.controlehotel.dao;
 
 import io.github.eldemonstro.controlehotel.db.DBConnect;
 import io.github.eldemonstro.controlehotel.models.Entry;
+import io.github.eldemonstro.controlehotel.models.EntryPerson;
 import io.github.eldemonstro.controlehotel.models.Person;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -72,10 +73,25 @@ public class EntryDao {
         return entry;
     }
     
-    public List<Entry> entryHistory() throws SQLException{
-        List<Entry> entries = new ArrayList<>();
+    public List<EntryPerson> entryHistory() throws SQLException{
+        List<EntryPerson> entries = new ArrayList<>();
         
+        String sql = "select entries.*, people.* from entries join people on entries.people_id = people.id order by entries.id desc limit 6";
         
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Entry entry = new Entry();
+                Person person = new Person();
+                entry.setId(rs.getLong(1));
+                entry.setEntryDate(rs.getDate(2));
+                person.setId(rs.getLong(4));
+                person.setCPF(rs.getString(5));
+                person.setName(rs.getString(6));
+                EntryPerson entryPerson = new EntryPerson(entry, person);
+                entries.add(entryPerson);
+            }
+        }
         
         return entries;
     }

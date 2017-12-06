@@ -8,6 +8,7 @@ package io.github.eldemonstro.controlehotel.controllers;
 import io.github.eldemonstro.controlehotel.dao.EntryDao;
 import io.github.eldemonstro.controlehotel.models.*;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -24,5 +25,9 @@ public class EntriesController {
         Entry entry;
         entry = entryDao.saveEntry(person);
         return entry;
+    }
+
+    public List<EntryPerson> getEntryHistory() throws SQLException {
+        return entryDao.entryHistory();
     }
 }

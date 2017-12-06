@@ -56,4 +56,24 @@ public class PersonDao {
         }
         return person;
     }
+
+    public Person insertPerson(Person personIn) throws SQLException {
+        String query = "insert into people (name, cpf) values (?,?)";
+        
+        try (PreparedStatement stmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+            stmt.setString(1, personIn.getName());
+            stmt.setString(2, personIn.getCPF());
+            stmt.execute();
+            
+            try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    personIn.setId(generatedKeys.getLong(1));
+                } else {
+                    throw new SQLException("Creating user failed, no ID obtained.");
+                }
+            }
+            
+        }
+        return personIn;
+    }
 }

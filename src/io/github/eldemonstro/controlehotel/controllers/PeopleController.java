@@ -25,4 +25,9 @@ public class PeopleController {
         Person person = personDao.getByCPF(CPF);
         return person;
     }
+    
+    public Person insertPerson(Person personIn) throws SQLException {
+        Person person = personDao.insertPerson(personIn);
+        return person;
+    }
 }

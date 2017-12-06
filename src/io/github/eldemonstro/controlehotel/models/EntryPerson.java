@@ -12,6 +12,25 @@ package io.github.eldemonstro.controlehotel.models;
 public class EntryPerson {
     private Person person;
     private Entry entry;
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public Entry getEntry() {
+        return entry;
+    }
+
+    public void setEntry(Entry entry) {
+        this.entry = entry;
+    }
     
-    
+    public EntryPerson(Entry entry, Person person) {
+        this.entry = entry;
+        this.person = person;
+    }
 }
